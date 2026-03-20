@@ -1,0 +1,34 @@
+From 8c07468256c768b1ad883e026233b31136cfe4aa Mon Sep 17 00:00:00 2001
+From: DanielePioGenovese <delitedaniele@gmail.com>
+Date: Fri, 13 Mar 2026 14:20:36 +0100
+Subject: [PATCH] ASoC: amd: yc: Add MSI Thin A15 B7VF to quirk table
+
+Add the MSI Thin A15 B7VF to the quirk table to enable the internal
+microphone, which otherwise does not work out of the box.
+
+Signed-off-by: DanielePioGenovese <delitedaniele@gmail.com>
+---
+ sound/soc/amd/yc/acp6x-mach.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/sound/soc/amd/yc/acp6x-mach.c b/sound/soc/amd/yc/acp6x-mach.c
+index 1324543b42d7..352a07728d78 100644
+--- a/sound/soc/amd/yc/acp6x-mach.c
++++ b/sound/soc/amd/yc/acp6x-mach.c
+@@ -717,6 +717,13 @@ static const struct dmi_system_id yc_acp_quirk_table[] = {
+ 			DMI_MATCH(DMI_BOARD_NAME, "PM1503CDA"),
+ 		}
+ 	},
++	{
++		.driver_data = &acp6x_card,
++		.matches = {
++			DMI_MATCH(DMI_BOARD_VENDOR, "Micro-Star International Co., Ltd."),
++			DMI_MATCH(DMI_PRODUCT_NAME, "Thin A15 B7VF"),
++		}
++	},
+ 	{}
+ };
+ 
+-- 
+2.43.0
+
