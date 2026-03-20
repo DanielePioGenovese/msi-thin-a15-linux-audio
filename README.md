@@ -5,7 +5,7 @@ This repository contains a kernel patch to enable the internal digital microphon
 ##  STATUS: SUBMITTED UPSTREAM
 - **Target Subsystem:** ALSA / ASoC (AMD yc)
 - **Submission Date:** March 20, 2026
-- **Link to Discussion:** Pending
+- **Link to Discussion:** [Pending](https://lore.kernel.org/linux-sound/20260320155842.55304-1-delitedaniele@gmail.com/)
 
 ## The Issue
 On the MSI Thin A15 B7VF, the internal microphone is not detected by default because it requires a specific entry in the kernel's ACPI/DMI quirk table. Without this patch, the system fails to initialize the digital mic on the AMD Audio processor.
